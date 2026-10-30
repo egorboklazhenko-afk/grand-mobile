@@ -1,0 +1,54 @@
+{
+  "tickets": 1000,
+  "mode": "retrieval_templates",
+  "category_counts": {
+    "complaint.cheat": 25,
+    "complaint.dm": 112,
+    "complaint.other": 344,
+    "complaint.insult": 194,
+    "complaint.admin": 38,
+    "complaint.invalid": 87,
+    "complaint.scam": 15,
+    "complaint.rmt_ads": 2,
+    "report.offtopic": 142,
+    "report.help": 7,
+    "report.complaint": 29,
+    "report.question": 5
+  },
+  "language_counts": {
+    "und": 132,
+    "ru": 787,
+    "uz": 60,
+    "kk": 18,
+    "en": 3
+  },
+  "priority_counts": {
+    "p1": 817,
+    "p0": 3,
+    "p3": 147,
+    "p2": 33
+  },
+  "needs_human_share": 0.871,
+  "p50_latency_ms": 0.512,
+  "p95_latency_ms": 1.783,
+  "invalid_citation_id_tickets": 0,
+  "admin_outcome_invariance_failures": 0,
+  "wording_guard_failures": 0,
+  "mean_known_api_cost_usd": 0.0,
+  "max_known_api_cost_usd": 0,
+  "unknown_cost_tickets": 0,
+  "tickets_above_api_cost_target": 0,
+  "category_accuracy": null,
+  "category_labeled_count": 0,
+  "priority_macro_f1": null,
+  "priority_labeled_count": 0,
+  "draft_quality_blind_score": null,
+  "native_language_review": null,
+  "limitations": [
+    "Citation existence is not semantic relevance.",
+    "Heuristic confidence is not calibrated.",
+    "Original validation has no category/priority labels; absent metrics remain null.",
+    "Local model generation, if enabled, requires separate hardware and native-language evaluation.",
+    "Timing is serial engine timing, not end-to-end concurrent HTTP latency. Hardware and energy costs excluded."
+  ]
+}

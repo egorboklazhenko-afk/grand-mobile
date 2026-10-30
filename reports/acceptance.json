@@ -1,0 +1,22 @@
+{
+  "unit_tests": 35,
+  "unit_test_status": "passed",
+  "http_contract": "passed",
+  "http_invalid_input": "passed",
+  "http_cross_origin_write_block": "passed",
+  "feedback_persistence": "passed",
+  "cli_output_count": 10,
+  "cli_duplicate_scenario": "passed",
+  "real_validation_citation_check_tickets": 1000,
+  "all_citations_are_real_numbered_points": true,
+  "http_requests": 80,
+  "http_concurrency": 4,
+  "offline_http_p95_ms": 27.356,
+  "synthetic_cases": 32,
+  "synthetic_category_accuracy": 1.0,
+  "synthetic_priority_macro_f1": 1.0,
+  "synthetic_language_accuracy": 1.0,
+  "synthetic_benchmark_note": "Hand-authored regression scenarios, not an independent or hidden competition evaluation.",
+  "groq_connection": "User reports successful operation; external API re-test intentionally skipped.",
+  "llm_quality_and_latency": "Not measured by this verification script."
+}

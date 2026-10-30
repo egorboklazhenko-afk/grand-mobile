@@ -1,0 +1,13 @@
+data/
+runtime/
+user-data/
+.venv-desktop/
+dist-native/
+build/
+*.spec
+.env
+*.jsonl.gz
+__pycache__/
+*.pyc
+.venv/
+reports/predictions*.jsonl

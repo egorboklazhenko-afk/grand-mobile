@@ -1,0 +1,343 @@
+{
+  "note": "Вымышленные обращения; локальный режим. Не выборка из выгрузки.",
+  "examples": [
+    {
+      "input": {
+        "ticket_id": "synthetic-1",
+        "kind": "report",
+        "messages": [
+          {
+            "role": "player",
+            "text": "Оплатил донат, ГК не пришли."
+          }
+        ]
+      },
+      "output": {
+        "lang": "ru",
+        "category": "report.payment",
+        "priority": "p0",
+        "extracted": {
+          "nickname": null,
+          "rule_refs": [],
+          "has_evidence": false,
+          "server": null
+        },
+        "draft_reply": {
+          "lang": "ru",
+          "text": "Здравствуйте! Укажите сервер, время платежа и номер операции. Не присылайте полный номер карты, CVV и коды подтверждения. Для решения требуется проверка администратором.",
+          "cited": []
+        },
+        "needs_human": true,
+        "reasons": [
+          "Обязательная эскалация: аккаунт, платёж, апелляция или жалоба на администратора"
+        ]
+      }
+    },
+    {
+      "input": {
+        "ticket_id": "synthetic-2",
+        "kind": "complaint",
+        "messages": [
+          {
+            "role": "player",
+            "text": "Demo_Player оскорбил меня в чате, пункт 2.1.",
+            "attachments": 2
+          }
+        ]
+      },
+      "output": {
+        "lang": "ru",
+        "category": "complaint.insult",
+        "priority": "p1",
+        "extracted": {
+          "nickname": "Demo_Player",
+          "rule_refs": [
+            "2.1"
+          ],
+          "has_evidence": true,
+          "server": null
+        },
+        "draft_reply": {
+          "lang": "ru",
+          "text": "Здравствуйте! Спасибо за обращение. Описанная ситуация пока не подтверждена. Уточните: сервер, время события. Материалы отмечены как приложенные, но их содержимое мне недоступно. Для проверки ситуации релевантен пункт 2.1 раздела «Общие правила игры». Это основание для проверки, а не подтверждение нарушения. Для решения требуется проверка администратором.",
+          "cited": [
+            "2.1"
+          ]
+        },
+        "needs_human": true,
+        "reasons": [
+          "Утверждения игрока требуют проверки; решение о нарушении принимает администратор",
+          "Есть метаданные вложений; содержимое не просмотрено"
+        ]
+      }
+    },
+    {
+      "input": {
+        "ticket_id": "synthetic-3",
+        "kind": "report",
+        "messages": [
+          {
+            "role": "player",
+            "text": "Сәлеметсіз бе! Аккаунтым бұзылды. Көмек беріңіз."
+          }
+        ]
+      },
+      "output": {
+        "lang": "kk",
+        "category": "report.account",
+        "priority": "p0",
+        "extracted": {
+          "nickname": null,
+          "rule_refs": [],
+          "has_evidence": false,
+          "server": null
+        },
+        "draft_reply": {
+          "lang": "kk",
+          "text": "Сәлеметсіз бе! Құпиясөз бен растау кодтарын жібермеңіз. Серверді, ойыншы атын және кіру мүмкіндігін жоғалтқан уақытты көрсетіңіз. Жағдайды тексеру үшін ереженің 1.4 тармағы маңызды. Бұл бұзушылықтың расталғанын білдірмейді. Шешім қабылдау үшін әкімшінің тексеруі қажет.",
+          "cited": [
+            "1.4"
+          ]
+        },
+        "needs_human": true,
+        "reasons": [
+          "Обязательная эскалация: аккаунт, платёж, апелляция или жалоба на администратора"
+        ]
+      }
+    },
+    {
+      "input": {
+        "ticket_id": "synthetic-4",
+        "kind": "report",
+        "messages": [
+          {
+            "role": "player",
+            "text": "Salom! To‘lov qildim, lekin pulim kelmadi. Yordam bering."
+          }
+        ]
+      },
+      "output": {
+        "lang": "uz",
+        "category": "report.payment",
+        "priority": "p0",
+        "extracted": {
+          "nickname": null,
+          "rule_refs": [],
+          "has_evidence": false,
+          "server": null
+        },
+        "draft_reply": {
+          "lang": "uz",
+          "text": "Assalomu alaykum! Server, to‘lov vaqti va operatsiya raqamini yozing. Kartaning to‘liq raqami, CVV yoki tasdiqlash kodlarini yubormang. Qaror qabul qilish uchun administrator tekshiruvi zarur.",
+          "cited": []
+        },
+        "needs_human": true,
+        "reasons": [
+          "Обязательная эскалация: аккаунт, платёж, апелляция или жалоба на администратора"
+        ]
+      }
+    },
+    {
+      "input": {
+        "ticket_id": "synthetic-5",
+        "kind": "report",
+        "reporter_hash": "synthetic-reporter",
+        "created_at": "2026-10-30T10:00:00",
+        "messages": [
+          {
+            "role": "player",
+            "text": "Застрял в текстурах возле больницы."
+          }
+        ]
+      },
+      "output": {
+        "lang": "ru",
+        "category": "report.help",
+        "priority": "p2",
+        "extracted": {
+          "nickname": null,
+          "rule_refs": [],
+          "has_evidence": false,
+          "server": null
+        },
+        "draft_reply": {
+          "lang": "ru",
+          "text": "Здравствуйте! Опишите, где вы застряли или что перестало работать; укажите сервер и время события. Для решения требуется проверка администратором.",
+          "cited": []
+        },
+        "needs_human": true,
+        "reasons": [
+          "Нет проверенной базы игровых инструкций; конкретные действия не выдумываются"
+        ]
+      }
+    },
+    {
+      "input": {
+        "ticket_id": "synthetic-6",
+        "kind": "report",
+        "reporter_hash": "synthetic-reporter",
+        "created_at": "2026-10-30T10:20:00",
+        "messages": [
+          {
+            "role": "player",
+            "text": "Застрял в текстурах возле больницы."
+          }
+        ]
+      },
+      "output": {
+        "lang": "ru",
+        "category": "report.help",
+        "priority": "p2",
+        "extracted": {
+          "nickname": null,
+          "rule_refs": [],
+          "has_evidence": false,
+          "server": null
+        },
+        "draft_reply": {
+          "lang": "ru",
+          "text": "Здравствуйте! Похожее обращение от вас уже зарегистрировано за последний час. Уточните, появились ли новые сведения. Опишите, где вы застряли или что перестало работать; укажите сервер и время события. Для решения требуется проверка администратором.",
+          "cited": []
+        },
+        "needs_human": true,
+        "reasons": [
+          "Нет проверенной базы игровых инструкций; конкретные действия не выдумываются",
+          "Точное совпадение нормализованного текста от того же заявителя в пределах часа"
+        ]
+      }
+    },
+    {
+      "input": {
+        "ticket_id": "synthetic-7",
+        "kind": "complaint",
+        "messages": [
+          {
+            "role": "player",
+            "text": "Меня забанили без причины, прошу пересмотреть наказание."
+          }
+        ]
+      },
+      "output": {
+        "lang": "ru",
+        "category": "complaint.admin",
+        "priority": "p3",
+        "extracted": {
+          "nickname": null,
+          "rule_refs": [],
+          "has_evidence": false,
+          "server": null
+        },
+        "draft_reply": {
+          "lang": "ru",
+          "text": "Здравствуйте! Укажите сервер, ник, время наказания и причину несогласия. Для проверки ситуации релевантен пункт 3.4 раздела «Общие правила игры». Это основание для проверки, а не подтверждение нарушения. Для решения требуется проверка администратором.",
+          "cited": [
+            "3.4"
+          ]
+        },
+        "needs_human": true,
+        "reasons": [
+          "Утверждения игрока требуют проверки; решение о нарушении принимает администратор",
+          "Обязательная эскалация: аккаунт, платёж, апелляция или жалоба на администратора"
+        ]
+      }
+    },
+    {
+      "input": {
+        "ticket_id": "synthetic-8",
+        "kind": "report",
+        "messages": [
+          {
+            "role": "player",
+            "text": "Please help, my account was hacked."
+          }
+        ]
+      },
+      "output": {
+        "lang": "en",
+        "category": "report.account",
+        "priority": "p0",
+        "extracted": {
+          "nickname": null,
+          "rule_refs": [],
+          "has_evidence": false,
+          "server": null
+        },
+        "draft_reply": {
+          "lang": "en",
+          "text": "Hello! Do not share passwords or verification codes. Provide your server, player name and when access was lost. Rule 1.4 is relevant for reviewing this report. This is not confirmation of a violation. An administrator must review this before a decision can be made.",
+          "cited": [
+            "1.4"
+          ]
+        },
+        "needs_human": true,
+        "reasons": [
+          "Обязательная эскалация: аккаунт, платёж, апелляция или жалоба на администратора"
+        ]
+      }
+    },
+    {
+      "input": {
+        "ticket_id": "synthetic-9",
+        "kind": "report",
+        "messages": [
+          {
+            "role": "player",
+            "text": "Hola, necesito ayuda con un pago."
+          }
+        ]
+      },
+      "output": {
+        "lang": "es",
+        "category": "report.payment",
+        "priority": "p0",
+        "extracted": {
+          "nickname": null,
+          "rule_refs": [],
+          "has_evidence": false,
+          "server": null
+        },
+        "draft_reply": {
+          "lang": "es",
+          "text": "¡Hola! Indica servidor, hora del pago y referencia de la operación. No envíes el número completo de tarjeta, CVV ni códigos. Un administrador debe revisar el caso antes de tomar una decisión.",
+          "cited": []
+        },
+        "needs_human": true,
+        "reasons": [
+          "Обязательная эскалация: аккаунт, платёж, апелляция или жалоба на администратора"
+        ]
+      }
+    },
+    {
+      "input": {
+        "ticket_id": "synthetic-10",
+        "kind": "report",
+        "messages": [
+          {
+            "role": "player",
+            "text": "Olá, preciso de ajuda com pagamento."
+          }
+        ]
+      },
+      "output": {
+        "lang": "pt",
+        "category": "report.payment",
+        "priority": "p0",
+        "extracted": {
+          "nickname": null,
+          "rule_refs": [],
+          "has_evidence": false,
+          "server": null
+        },
+        "draft_reply": {
+          "lang": "pt",
+          "text": "Olá! Informe servidor, horário do pagamento e referência da transação. Não envie número completo do cartão, CVV ou códigos. Um administrador precisa analisar o caso antes de tomar uma decisão.",
+          "cited": []
+        },
+        "needs_human": true,
+        "reasons": [
+          "Обязательная эскалация: аккаунт, платёж, апелляция или жалоба на администратора"
+        ]
+      }
+    }
+  ]
+}

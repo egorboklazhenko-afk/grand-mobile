@@ -1,0 +1,164 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "Grand Support Copilot",
+    "version": "1.1.0"
+  },
+  "servers": [
+    {
+      "url": "http://127.0.0.1:8765"
+    }
+  ],
+  "paths": {
+    "/triage": {
+      "post": {
+        "summary": "Triage a player ticket; drafts do not enact decisions",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": [
+                  "kind",
+                  "messages"
+                ],
+                "properties": {
+                  "kind": {
+                    "type": "string",
+                    "enum": [
+                      "complaint",
+                      "report"
+                    ]
+                  },
+                  "messages": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "required": [
+                        "role",
+                        "text"
+                      ],
+                      "properties": {
+                        "role": {
+                          "type": "string"
+                        },
+                        "text": {
+                          "type": "string"
+                        },
+                        "attachments": {
+                          "type": "integer",
+                          "minimum": 0
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Triage result",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "required": [
+                    "lang",
+                    "category",
+                    "priority",
+                    "is_spam_or_duplicate",
+                    "extracted",
+                    "draft_reply",
+                    "needs_human",
+                    "confidence",
+                    "reasons"
+                  ],
+                  "properties": {
+                    "lang": {
+                      "type": "string"
+                    },
+                    "category": {
+                      "type": "string"
+                    },
+                    "priority": {
+                      "type": "string",
+                      "enum": [
+                        "p0",
+                        "p1",
+                        "p2",
+                        "p3"
+                      ]
+                    },
+                    "is_spam_or_duplicate": {
+                      "type": "boolean"
+                    },
+                    "extracted": {
+                      "type": "object"
+                    },
+                    "draft_reply": {
+                      "type": "object",
+                      "required": [
+                        "lang",
+                        "text",
+                        "cited"
+                      ],
+                      "properties": {
+                        "lang": {
+                          "type": "string"
+                        },
+                        "text": {
+                          "type": "string"
+                        },
+                        "cited": {
+                          "type": "array",
+                          "items": {
+                            "type": "string"
+                          }
+                        }
+                      }
+                    },
+                    "needs_human": {
+                      "type": "boolean"
+                    },
+                    "confidence": {
+                      "type": "number",
+                      "minimum": 0,
+                      "maximum": 1
+                    },
+                    "reasons": {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      }
+                    },
+                    "audit": {
+                      "type": "object"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid input"
+          },
+          "413": {
+            "description": "Request too large"
+          }
+        }
+      }
+    },
+    "/health": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "Service status"
+          }
+        }
+      }
+    }
+  }
+}

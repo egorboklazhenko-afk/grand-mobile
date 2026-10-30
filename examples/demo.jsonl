@@ -1,0 +1,10 @@
+{"ticket_id":"synthetic-1","kind":"report","messages":[{"role":"player","text":"Оплатил донат, ГК не пришли."}]}
+{"ticket_id":"synthetic-2","kind":"complaint","messages":[{"role":"player","text":"Demo_Player оскорбил меня в чате, пункт 2.1.","attachments":2}]}
+{"ticket_id":"synthetic-3","kind":"report","messages":[{"role":"player","text":"Сәлеметсіз бе! Аккаунтым бұзылды. Көмек беріңіз."}]}
+{"ticket_id":"synthetic-4","kind":"report","messages":[{"role":"player","text":"Salom! To‘lov qildim, lekin pulim kelmadi. Yordam bering."}]}
+{"ticket_id":"synthetic-5","kind":"report","reporter_hash":"synthetic-reporter","created_at":"2026-10-30T10:00:00","messages":[{"role":"player","text":"Застрял в текстурах возле больницы."}]}
+{"ticket_id":"synthetic-6","kind":"report","reporter_hash":"synthetic-reporter","created_at":"2026-10-30T10:20:00","messages":[{"role":"player","text":"Застрял в текстурах возле больницы."}]}
+{"ticket_id":"synthetic-7","kind":"complaint","messages":[{"role":"player","text":"Меня забанили без причины, прошу пересмотреть наказание."}]}
+{"ticket_id":"synthetic-8","kind":"report","messages":[{"role":"player","text":"Please help, my account was hacked."}]}
+{"ticket_id":"synthetic-9","kind":"report","messages":[{"role":"player","text":"Hola, necesito ayuda con un pago."}]}
+{"ticket_id":"synthetic-10","kind":"report","messages":[{"role":"player","text":"Olá, preciso de ajuda com pagamento."}]}
